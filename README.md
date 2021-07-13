@@ -1,4 +1,3 @@
-
 # React App - Task list Manager
 
 This project corresponds to the coding challenge to apply for the position of Fullstack Developer at InfoCasas.
@@ -72,13 +71,18 @@ This project is geared towards consuming data from the [Laravel API Task Manager
 
 If you followed all the steps described in the [Readme](https://github.com/santiagocarlos/task-manager-laravel-api/blob/master/README.md) of that [repo](https://github.com/santiagocarlos/task-manager-laravel-api), and if you have this API running, with Laravel's own server `php artisan serve`
 
-It is necessary, at this point to update the `TodoStore.js` file, on `line 4`
+
+As I just mentioned, the project is configured to connect directly to the Laravel API automatically.
+
+
+##### Note: 
+If for some reason you raised the API in another environment or with a virtual domain, is necessary, at this point to update the `TodoStore.js` file, on `line 4`
 
 ```
 import React from 'react';
 import { observable, action, computed, configure, runInAction } from 'mobx';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://127.0.0.1:8000/api'; //modify for integrate Laravel API
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api'; //modify only if your api is in a domain virtual or is in another enviroment
 configure({enforceActions: true});
 ```
 If you mounted the API using a domain and virtual host, enter the corresponding URL.
